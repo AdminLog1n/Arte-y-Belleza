@@ -1,0 +1,154 @@
+{
+  "bot_name": "Bot Ventas eBook Belleza",
+  "description": "Asistente virtual para la venta automática del eBook 'El Arte Transformador de la Belleza' en WhatsApp e Instagram.",
+  "platforms": ["WhatsApp", "Instagram"],
+  "flows": [
+    {
+      "id": "inicio",
+      "trigger": ["hola", "hi", "buenas", "buenos días", "buenas tardes", "buenas noches", "quiero comprar", "ebook"],
+      "message": "👋 ¡Hola! Soy tu asistente virtual para la compra del eBook 'El Arte Transformador de la Belleza'.\n\n¿Quieres saber de qué trata o prefieres comprarlo ya?",
+      "buttons": [
+        {
+          "text": "Saber más",
+          "action": "goto_info"
+        },
+        {
+          "text": "Comprar ahora",
+          "action": "goto_compra"
+        }
+      ]
+    },
+    {
+      "id": "info",
+      "message": "Este eBook fusiona técnicas ancestrales y modernas para convertirte en un/a experto/a de la belleza profesional:\n\n📘 Colorimetría capilar\n📘 Estilismo\n📘 Efectos de color\n✅ Guías paso a paso\n✅ Acceso digital de por vida\n\n¿Te gustaría conocer los beneficios o ver testimonios?",
+      "buttons": [
+        {
+          "text": "Ver beneficios",
+          "action": "goto_beneficios"
+        },
+        {
+          "text": "Ver testimonios",
+          "action": "goto_testimonios"
+        },
+        {
+          "text": "Comprar ahora",
+          "action": "goto_compra"
+        }
+      ]
+    },
+    {
+      "id": "beneficios",
+      "message": "Beneficios de este eBook:\n\n✨ Resultados predecibles y profesionales\n✨ Técnicas prácticas y visuales\n✨ Inspiración en rituales ancestrales\n✨ Crecimiento para tu carrera y negocio\n\n¿Listo/a para comprar?",
+      "buttons": [
+        {
+          "text": "Comprar ahora",
+          "action": "goto_compra"
+        },
+        {
+          "text": "Ver testimonios",
+          "action": "goto_testimonios"
+        }
+      ]
+    },
+    {
+      "id": "testimonios",
+      "message": "Testimonios reales de compradores:\n\n“Gracias a este eBook, entendí la colorimetría de una manera simple y profesional. ¡Transformó mi trabajo!” — Carolina G., México\n\n“Una joya de conocimiento. Cada capítulo me inspiró a perfeccionar mi arte.” — María L., Perú\n\n¿Quieres transformar tu carrera también?",
+      "buttons": [
+        {
+          "text": "Comprar ahora",
+          "action": "goto_compra"
+        }
+      ]
+    },
+    {
+      "id": "compra",
+      "message": "¡Excelente decisión! 💎\n\nEl eBook tiene un precio especial de $23 USD.\n\nPuedes elegir tu método de compra:",
+      "buttons": [
+        {
+          "text": "Pagar por PayPal",
+          "action": "goto_paypal"
+        },
+        {
+          "text": "Comprar por WhatsApp",
+          "action": "goto_whatsapp"
+        },
+        {
+          "text": "Solicitar info por Instagram",
+          "action": "goto_insta"
+        }
+      ]
+    },
+    {
+      "id": "paypal",
+      "message": "🔗 Haz clic en el siguiente enlace para pagar con PayPal:\nhttps://www.paypal.com/paypalme/tuusuario/23\n\nCuando completes tu pago, envía el comprobante aquí y recibirás tu eBook en minutos 📩",
+      "buttons": [
+        {
+          "text": "Ya pagué",
+          "action": "goto_confirmacion"
+        }
+      ]
+    },
+    {
+      "id": "whatsapp",
+      "message": "¡Perfecto! Puedes finalizar tu compra directamente por WhatsApp.\n\nEscríbenos aquí: https://wa.me/50375187739?text=Hola!%20Quiero%20comprar%20el%20eBook%20El%20Arte%20Transformador%20de%20la%20Belleza\n\nUn asesor te guiará personalmente.",
+      "buttons": [
+        {
+          "text": "Volver al inicio",
+          "action": "goto_inicio"
+        }
+      ]
+    },
+    {
+      "id": "insta",
+      "message": "¡Gracias por tu interés! Déjanos tu correo electrónico o escribe 'quiero comprar' y un asesor de Instagram te contactará en breve para finalizar tu compra.",
+      "buttons": [
+        {
+          "text": "Volver al inicio",
+          "action": "goto_inicio"
+        }
+      ]
+    },
+    {
+      "id": "confirmacion",
+      "message": "¡Comprobante recibido! 🙌\n\nEn breve recibirás en este chat el acceso a tu eBook 'El Arte Transformador de la Belleza'.\nGracias por confiar en nosotros 💜",
+      "buttons": [
+        {
+          "text": "Gracias",
+          "action": "goto_despedida"
+        }
+      ]
+    },
+    {
+      "id": "despedida",
+      "message": "¡Listo! Si tienes otra duda, sólo escríbeme. ¡Éxito en tu carrera profesional! 🌸"
+    }
+  ],
+  "faq": [
+    {
+      "question": "¿Cómo recibo el eBook?",
+      "answer": "📘 Recibirás el eBook directamente aquí o por email, en formato PDF descargable, una vez que confirmemos tu pago."
+    },
+    {
+      "question": "¿En qué formato viene?",
+      "answer": "El eBook viene en formato PDF, listo para abrir desde tu celular, tablet o computadora."
+    },
+    {
+      "question": "¿Puedo pagar de otra forma?",
+      "answer": "Actualmente aceptamos PayPal y compra directa por WhatsApp con asesor. Consulta si en tu país hay otra opción disponible."
+    },
+    {
+      "question": "¿Cuánto tarda en llegar?",
+      "answer": "El acceso es inmediato: una vez que envías tu comprobante, recibes el material en minutos 🚀"
+    },
+    {
+      "question": "¿Puedo pedir reembolso?",
+      "answer": "Por la naturaleza digital y el bajo costo, este producto no tiene reembolso. ¡Tu satisfacción es nuestra prioridad!"
+    }
+  ],
+  "settings": {
+    "language": "es",
+    "timezone": "America/El_Salvador",
+    "welcome_message_enabled": true,
+    "fallback_message": "Disculpa, no entendí tu mensaje. ¿Puedes elegir una de las opciones o escribir 'ayuda'? 😊"
+  }
+}
