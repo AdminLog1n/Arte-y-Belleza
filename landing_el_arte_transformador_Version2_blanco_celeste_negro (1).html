@@ -7,6 +7,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID'); // Reemplaza YOUR_PIXEL_ID con tu ID real de Meta Pixel
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root{
@@ -45,6 +65,40 @@
     .footer-bg { background: var(--negro-elegante);}
     .footer-text { color: var(--blanco-puro);}
   </style>
+  
+  <script>
+    // Función para rastrear eventos de Meta Pixel
+    function trackMetaEvent(eventName, params) {
+      if (typeof fbq !== 'undefined') {
+        fbq('track', eventName, params);
+      }
+    }
+    
+    // Rastrear clic en botones de compra
+    document.addEventListener('DOMContentLoaded', function() {
+      // Rastrear ViewContent cuando la página carga
+      trackMetaEvent('ViewContent', {
+        content_name: 'El Arte Transformador de la Belleza',
+        content_category: 'eBook',
+        content_type: 'product',
+        value: 23.00,
+        currency: 'USD'
+      });
+      
+      // Rastrear todos los enlaces de WhatsApp para compra
+      const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+      whatsappLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          trackMetaEvent('InitiateCheckout', {
+            content_name: 'El Arte Transformador de la Belleza',
+            content_category: 'eBook',
+            value: 23.00,
+            currency: 'USD'
+          });
+        });
+      });
+    });
+  </script>
 </head>
 <body class="bg-blanco text-[color:var(--negro-elegante)] leading-relaxed">
   <header class="bg-cover bg-center" style="background-image:linear-gradient(rgba(255,255,255,0.89), rgba(35,35,35,0.73)), url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1600&auto=format&fit=crop&s=placeholder');">
